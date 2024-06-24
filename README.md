@@ -8,7 +8,7 @@ In this project, you will build a React web application called Jammming. You wil
 #### Example Project
 A preview of the Jammming project. A user looks up the name of an artist and adds songs fetched from the Spotify API to a playlist in the Jammming app.
 
-####bProject Requirements
+#### Project Requirements
 Build a web app using React
 Version control your application with Git and host the repository on GitHub
 Integrate with Spotify or another API
