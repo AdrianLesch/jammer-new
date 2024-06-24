@@ -1,0 +1,6 @@
+.container{
+    border: 2px solid black;
+    max-width: fit-content;
+    padding: 5px;
+    text-align: left;
+}
