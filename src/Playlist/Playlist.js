@@ -14,7 +14,7 @@ export default function Playlist( {playlist} ) {
 
     useEffect(() => {
         setTracklist(playlist);
-    })
+    }, [playlist])
 
     //console.log(tracklist);
 
@@ -22,9 +22,16 @@ export default function Playlist( {playlist} ) {
         setRemove(bool);
     }
 
+    const deleteById = index => {
+        setTracklist((prev) =>  prev.filter((item) => item.index !== index));
+    }
+
     useEffect(() => {
-        setTracklist(prev => prev.filter((item, index) => index !== targetIndex));
-    }, [remove])
+        if(remove){
+            deleteById(tracklist.index);
+        }
+        
+    }, [remove, tracklist])
 
 
     return (
