@@ -12,7 +12,7 @@ export default function Track({ track, getTrack }) {
         Song: {track.song}
         <br />
         Album: {track.album}
-        <button type="button" onClick={() => getTrack([track])}>+</button>
+        <button type="button" onClick={() => getTrack(track)}>+</button>
       </div>
 
     </>

@@ -6,8 +6,7 @@ export default function Playlist(props) {
 
     const [playlistName, setPlaylistName] = useState("");
     const [tracklist, setTracklist] = useState([]);
-    const [remove, setRemove] = useState(false);
-
+    
     function handleChange(e) {
         e.preventDefault();
         setPlaylistName(e.target.value);
@@ -17,25 +16,9 @@ export default function Playlist(props) {
         setTracklist(playlist);
     }, [playlist])
 
-  
-
-
-    function getRemove(bool) {
-        setRemove(bool);
+    function getTrackRemove(trackToRemove) {
+        setTracklist((prev) => prev.filter((track) => track.id !== trackToRemove.id));
     }
-
-    const deleteById = index => {
-        setTracklist((prev) => prev.filter((item) => item.index !== index));
-    }
-
-    useEffect(() => {
-        if (remove) {
-            deleteById(tracklist.index);
-        }
-
-    }, [remove, tracklist])
-
-
 
 
     return (
@@ -45,8 +28,8 @@ export default function Playlist(props) {
                 <form>
                     <input type="text" placeholder='Enter Playlistname' onChange={handleChange} />
                     <br />
-                    {tracklist.map((track, index) => (
-                        <Tracklist key={index} track={track} getRemove={getRemove} />
+                    {tracklist.map((track) => (
+                        <Tracklist key={track.id} track={track} getTrackRemove={getTrackRemove} />
                     ))}
                     <br />
                     <button type='submit'>Save to Spotify</button>

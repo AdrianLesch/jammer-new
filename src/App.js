@@ -13,14 +13,9 @@ function App() {
     setInput(track);
   }
 
- function getTrack([item]) {
-  setPlaylist((prevTrack) =>[...prevTrack, item]);
+ function getTrack(track) {
+  setPlaylist((prevTrack) =>[...prevTrack, track]);
  }
-
-
-  useEffect(() => {getTrack(playlist)}, [playlist]);
-
- 
 
   return (
     <>
