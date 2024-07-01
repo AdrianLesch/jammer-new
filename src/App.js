@@ -7,27 +7,25 @@ import Playlist from './Playlist/Playlist';
 function App() {
 
   const [input, setInput] = useState([]);
-  const [appClicked, setAppClicked] = useState(false);
   const [playlist, setPlaylist] = useState([]);
-
-  //console.log(`Hi I reached the App component: ${appClicked}`)
 
   function getSearch(track) {
     setInput(track);
   }
 
-  function getAppClick(bool) {
-    setAppClicked(bool);
-  }
+ function getTrack([item]) {
+  setPlaylist((prevTrack) =>[...prevTrack, item]);
+ }
 
-  useEffect(() => {setPlaylist(input)}, [appClicked]);
 
-  //console.log(input);
+  useEffect(() => {getTrack(playlist)}, [playlist]);
+
+ 
 
   return (
     <>
       <SearchBar getSearch={getSearch} />
-      <SearchResults tracks={input} getAppClick={getAppClick}/>
+      <SearchResults tracks={input} getTrack={getTrack}/>
       <Playlist playlist={playlist} />
     </>
   )

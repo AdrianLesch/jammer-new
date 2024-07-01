@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Tracklist from "../Tracklist/Tracklist";
 
-export default function Playlist( {playlist} ) {
+export default function Playlist(props) {
+    const { playlist } = props;
 
     const [playlistName, setPlaylistName] = useState("");
     const [tracklist, setTracklist] = useState([]);
@@ -16,22 +17,25 @@ export default function Playlist( {playlist} ) {
         setTracklist(playlist);
     }, [playlist])
 
-    //console.log(tracklist);
+  
 
-    function getRemove(bool){
+
+    function getRemove(bool) {
         setRemove(bool);
     }
 
     const deleteById = index => {
-        setTracklist((prev) =>  prev.filter((item) => item.index !== index));
+        setTracklist((prev) => prev.filter((item) => item.index !== index));
     }
 
     useEffect(() => {
-        if(remove){
+        if (remove) {
             deleteById(tracklist.index);
         }
-        
+
     }, [remove, tracklist])
+
+
 
 
     return (
@@ -42,8 +46,8 @@ export default function Playlist( {playlist} ) {
                     <input type="text" placeholder='Enter Playlistname' onChange={handleChange} />
                     <br />
                     {tracklist.map((track, index) => (
-                    <Tracklist key={index} track={track} getRemove={getRemove} />
-                ))}
+                        <Tracklist key={index} track={track} getRemove={getRemove} />
+                    ))}
                     <br />
                     <button type='submit'>Save to Spotify</button>
                 </form>
