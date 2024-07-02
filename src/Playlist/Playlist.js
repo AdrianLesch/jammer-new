@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Tracklist from "../Tracklist/Tracklist";
 
-export default function Playlist({playlist, onRemoveTrack}) {
+export default function Playlist({playlist, onRemoveTrack, getPlaylist}) {
     const [playlistName, setPlaylistName] = useState("");
     
     
@@ -10,11 +10,15 @@ export default function Playlist({playlist, onRemoveTrack}) {
         setPlaylistName(e.target.value);
     }
 
+    function handleSubmit(e){
+        getPlaylist(playlistName);
+    }
+
     return (
         <>
             <div style={{ border: "2px solid black", width: "fit-content", padding: "5px" }}>
                 Playlist
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='Enter Playlistname' onChange={handleChange} />
                     <br />
                     {playlist.map((track, index) => (

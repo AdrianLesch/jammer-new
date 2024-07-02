@@ -8,6 +8,7 @@ function App() {
 
   const [input, setInput] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [savedPlaylist, setSavedPlaylist] = useState([]);
 
   function getSearch(track) {
     setInput(track);
@@ -20,11 +21,28 @@ function App() {
   setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
 };
 
+function getPlaylist(item){
+  setSavedPlaylist(item);
+}
+
+console.log(savedPlaylist);
+
+  function MockBox(objectToRender){
+    return(
+      <>
+      <div style={{border: "2px black solid", width: "fit-content", height: "fit-content"}}>
+      <h3>Saved Playlist Item</h3>
+      </div>
+      </>
+    )
+  }
+
   return (
     <>
       <SearchBar getSearch={getSearch} />
       <SearchResults tracks={input} getTrack={getTrack}/>
-      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} />
+      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} getPlaylist={getPlaylist} />
+      <MockBox />
     </>
   )
 }
