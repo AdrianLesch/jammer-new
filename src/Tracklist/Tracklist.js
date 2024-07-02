@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Tracklist.module.css"
 
-export default function Tracklist({ track, getTrackRemove }) {
+export default function Tracklist({ track, index, onRemoveTrack }) {
 
   return (
     <>
@@ -11,7 +11,7 @@ export default function Tracklist({ track, getTrackRemove }) {
         Song: {track.song}        
         <br />
         Album: {track.album}
-        <button type="button" onClick={(e) => getTrackRemove(track)}>-</button>
+        <button type="button" onClick={() => onRemoveTrack(index)}>-</button>
       </div>
 
     </>

@@ -16,12 +16,15 @@ function App() {
  function getTrack(track) {
   setPlaylist((prevTrack) =>[...prevTrack, track]);
  }
+ const removeTrackFromPlaylist = (index) => {
+  setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
+};
 
   return (
     <>
       <SearchBar getSearch={getSearch} />
       <SearchResults tracks={input} getTrack={getTrack}/>
-      <Playlist playlist={playlist} />
+      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} />
     </>
   )
 }
