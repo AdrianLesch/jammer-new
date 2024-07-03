@@ -14,25 +14,27 @@ function App() {
     setInput(track);
   }
 
- function getTrack(track) {
-  setPlaylist((prevTrack) =>[...prevTrack, track]);
- }
- const removeTrackFromPlaylist = (index) => {
-  setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
-};
+  function getTrack(track) {
+    setPlaylist((prevTrack) => [...prevTrack, track]);
+  }
+  const removeTrackFromPlaylist = (index) => {
+    setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
+  };
 
-function getPlaylist(item){
-  setSavedPlaylist(item);
-}
+  function getPlaylist(item) {
+    setSavedPlaylist(item);
+  }
 
-console.log(savedPlaylist);
 
-  function MockBox(objectToRender){
-    return(
+
+  function MockBox({ savedPlaylist }) {
+
+    return (
       <>
-      <div style={{border: "2px black solid", width: "fit-content", height: "fit-content"}}>
-      <h3>Saved Playlist Item</h3>
-      </div>
+        <div style={{ border: "2px black solid", width: "fit-content", height: "fit-content" }}>
+          <h3>Saved Playlist Item</h3>
+          <pre>{JSON.stringify(savedPlaylist, null, 2)}</pre>
+        </div>
       </>
     )
   }
@@ -40,9 +42,9 @@ console.log(savedPlaylist);
   return (
     <>
       <SearchBar getSearch={getSearch} />
-      <SearchResults tracks={input} getTrack={getTrack}/>
+      <SearchResults tracks={input} getTrack={getTrack} />
       <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} getPlaylist={getPlaylist} />
-      <MockBox />
+      <MockBox savedPlaylist={savedPlaylist} />
     </>
   )
 }
