@@ -10,7 +10,7 @@ export default function SearchBar({ getSearch }) {
 
     function handleChange(e) {
         e.preventDefault();
-        setSearch(e.target.value);
+        setSearch(e.target.value.toLowerCase());
     }
 
     function handleSubmit(e) {
@@ -23,7 +23,7 @@ export default function SearchBar({ getSearch }) {
             <form onSubmit={handleSubmit} name="Search" className={styles.container}>
                 <input type="search" placeholder='Enter search here...' onChange={handleChange} />
                 <button type="submit">Search</button>
-                <SpotifyAPI sendSearch={sendSearch} />
+                <SpotifyAPI sendSearch={sendSearch} getSearch={getSearch}/>
             </form>
         </>
     )
