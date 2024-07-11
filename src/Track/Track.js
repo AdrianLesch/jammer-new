@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./Track.module.css"
 
 export default function Track({ track, getTrack }) {
-
+  const { id, name, artists, album, uri } = track;
+  const tracks = [id, name, artists, album, uri];
 
   return (
     <>
@@ -11,7 +12,7 @@ export default function Track({ track, getTrack }) {
         <br />
         Song: {track.name}
         <br />
-        Artist: {track.artist}
+        Artist: {track.artists}
         <br />
         Album: {track.album}
         <br />
