@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
-import TRACK from "../TRACK";
 import SpotifyAPI from "../Spotify/SpotifyAPI";
 
 export default function SearchBar({ getSearch }) {
