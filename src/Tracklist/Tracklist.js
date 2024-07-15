@@ -6,14 +6,18 @@ export default function Tracklist({ track, index, onRemoveTrack }) {
   return (
     <>
       <div className={styles.container}>
-        Artist: {track.artist}
         <br />
-        Song: {track.song}        
+        Song: {track[1]}
         <br />
-        Album: {track.album}
+        Artist: {track[2]}
+        <br />
+        Album: {track[3]}
+        <br />
+        ID: {track[0]}
+        <br />
+        URI: {track[4]}
         <button type="button" onClick={() => onRemoveTrack(index)}>-</button>
       </div>
-
     </>
   )
 }

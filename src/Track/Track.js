@@ -2,21 +2,21 @@ import React from "react";
 import styles from "./Track.module.css"
 
 export default function Track({ track, getTrack }) {
-  const { id, name, artists, album, uri } = track;
-  const tracks = [id, name, artists, album, uri];
+
 
   return (
     <>
       <div className={styles.container}>
-        ID: {track.id}
         <br />
-        Song: {track.name}
+        Song: {track[1]}
         <br />
-        Artist: {track.artists}
+        Artist: {track[2]}
         <br />
-        Album: {track.album}
+        Album: {track[3]}
         <br />
-        URI: {track.uri}
+        ID: {track[0]}
+        <br />
+        URI: {track[4]}
         <button type="button" onClick={() => getTrack(track)}>+</button>
       </div>
 

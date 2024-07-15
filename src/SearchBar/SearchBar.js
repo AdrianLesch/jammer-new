@@ -23,7 +23,7 @@ export default function SearchBar({ getSearch }) {
             <form onSubmit={handleSubmit} name="Search" className={styles.container}>
                 <input type="search" placeholder='Enter search here...' onChange={handleChange} />
                 <button type="submit">Search</button>
-                <SpotifyAPI sendSearch={sendSearch} getSearch={getSearch}/>
+                <SpotifyAPI sendSearch={sendSearch} getSearch={getSearch} />
             </form>
         </>
     )
@@ -31,7 +31,7 @@ export default function SearchBar({ getSearch }) {
 
 
 /*
-    //Maybe for
+    //Maybe for later use:
     function handleSubmit(e) {
         e.preventDefault();
         const searchElement = TRACK.filter((entry) => 
