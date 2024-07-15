@@ -28,25 +28,8 @@ function App() {
 
 
   console.log(playlist);
- 
-
-  return (
-    <>
-      <SearchBar getSearch={getSearch} />
-      <SearchResults tracks={input} getTrack={getTrack} />
-      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} getPlaylist={getPlaylist} />
-      
-    </>
-  )
-}
-
-export default App;
-
-
-
-/*
-<MockBox savedPlaylist={savedPlaylist} />
- function MockBox({ savedPlaylist }) {
+  
+  function MockBox({ savedPlaylist }) {
 
     return (
       <>
@@ -57,4 +40,22 @@ export default App;
       </>
     )
   }
+
+  return (
+    <>
+      <SearchBar getSearch={getSearch} />
+      <SearchResults tracks={input} getTrack={getTrack} />
+      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} getPlaylist={getPlaylist} />
+      <MockBox savedPlaylist={savedPlaylist} />
+    </>
+  )
+}
+
+export default App;
+
+
+
+/*
+<MockBox savedPlaylist={savedPlaylist} />
+ 
   */
