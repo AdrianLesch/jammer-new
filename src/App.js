@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
 import Playlist from './Playlist/Playlist';
-
+import SpotifyAPI from './Spotify/SpotifyAPI';
 
 
 function App() {
@@ -10,24 +10,26 @@ function App() {
   const [input, setInput] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [savedPlaylist, setSavedPlaylist] = useState([]);
+  const [accessToken, setAccessToken] = useState("");
 
+  //GetSearch-Data
   function getSearch(track) {
     setInput(track);
   }
 
+  //GetClickedTrack-Data
   function getTrack(track) {
     setPlaylist((prevTrack) => [...prevTrack, track]);
   }
+  //RemoveItemsFromPlaylist
   const removeTrackFromPlaylist = (index) => {
     setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
   };
 
+  //SendingPlaylist-Data
   function getPlaylist(item) {
     setSavedPlaylist(item);
   }
-
-
-  console.log(playlist);
   
   function MockBox({ savedPlaylist }) {
 
