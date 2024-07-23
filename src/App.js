@@ -26,7 +26,23 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
   };
 
-  //SendingPlaylist-Data
+  
+
+  return (
+    <>
+      <SearchBar getSearch={getSearch} />
+      <SearchResults tracks={input} getTrack={getTrack} />
+      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} /> 
+    </>
+  )
+}
+
+export default App;
+
+
+
+/*
+//SendingPlaylist-Data
   function getPlaylist(item) {
     setSavedPlaylist(item);
   }
@@ -41,19 +57,4 @@ function App() {
         </div>
       </>
     )
-  }
-
-  return (
-    <>
-      <SearchBar getSearch={getSearch} />
-      <SearchResults tracks={input} getTrack={getTrack} />
-      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} getPlaylist={getPlaylist} />
-      <MockBox savedPlaylist={savedPlaylist} />
-    </>
-  )
-}
-
-export default App;
-
-
-
+  }*/

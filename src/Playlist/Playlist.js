@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import SpotifyAPI from "../Spotify/SpotifyAPI";
 import Tracklist from "../Tracklist/Tracklist";
 
 export default function Playlist({ playlist, onRemoveTrack, getPlaylist }) {
     const [playlistName, setPlaylistName] = useState("");
-    const [playlistTracks, setPlaylistTracks] = useState({ playlistname: "", tracks: [] });
+    const [createPlaylist, setCreatePlaylist] = useState("");
 
 
     function handleChange(e) {
@@ -13,13 +14,9 @@ export default function Playlist({ playlist, onRemoveTrack, getPlaylist }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setPlaylistTracks({ playlistname: playlistName, tracks: playlist });
+        setCreatePlaylist(playlistName);
         alert("Playlist saved to Spotify");
     }
-
-    useEffect(() => {
-        getPlaylist(playlistTracks);
-    }, [playlistTracks]);
 
     return (
         <>
@@ -34,7 +31,14 @@ export default function Playlist({ playlist, onRemoveTrack, getPlaylist }) {
                     <br />
                     <button type='submit'>Save to Spotify</button>
                 </form>
+            <SpotifyAPI createPlaylist={createPlaylist}/>
             </div>
         </>
     )
 }
+
+/*
+useEffect(() => {
+        getPlaylist(playlistTracks);
+    }, [playlistTracks]);
+*/
