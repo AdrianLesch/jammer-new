@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
-export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist }) {
+export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri }) {
     const [accessToken, setAccessToken] = useState("");
     const [userId, setUserId] = useState("");
+    const [playlistId, setPlaylistId] = useState("");
 
     const CLIENT_ID = "3018fe9acf7d4fcfb25b96e1d2b84853";
     const CLIENT_SECRECT = "241ba7d436564a97b94efb0b5de1ba80";
@@ -49,6 +50,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist }) {
 
     //console.log(userId);
 
+    //Playlist-Creation-Function
     const setPlaylist = (playlistName) => {
         var playlistData = { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + accessToken }, 
         body: JSON.stringify({ name: playlistName, public: false }) }
@@ -56,17 +58,31 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist }) {
         if (accessToken) {
             fetch('https://api.spotify.com/v1/users/' + userId + '/playlists', playlistData)
                 .then(response => response.json())
-                .then(data => console.log(data))
+                .then(data => setPlaylistId(data.id))
         }
     }
-
-
 
     useEffect(() => {
         if (accessToken && userId) {
          setPlaylist(createPlaylist)
         };
     }, [createPlaylist]);
+
+    //AddTracks-Function
+    const addTracks = (playlistID) => {
+        var trackData = { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + accessToken },
+        body: JSON.stringify({ uris: uri }) }
+
+        if (accessToken) {
+            fetch('https://api.spotify.com/v1/playlists/' + playlistId + '/tracks', trackData)
+                .then(response => response.json())
+                .then(data => console.log(data))
+        }
+}
+
+    useEffect(() => {
+            addTracks(playlistId);
+    }, [playlistId]);
 }
 
 
