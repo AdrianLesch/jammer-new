@@ -12,7 +12,7 @@ function App() {
   const [savedPlaylist, setSavedPlaylist] = useState([]);
   const [accessToken, setAccessToken] = useState("");
 
-  console.log(input);
+  //console.log(input);
 
   //GetSearch-Data
   function getSearch(track) {

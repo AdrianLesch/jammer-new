@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri }) {
+export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri, publicPlaylist }) {
     const [accessToken, setAccessToken] = useState("");
     const [userId, setUserId] = useState("");
     const [playlistId, setPlaylistId] = useState("");
+
+    //console.log(uri);
 
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
     const CLIENT_SECRECT = process.env.REACT_APP_CLIENT_SECRET;
@@ -53,12 +55,14 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri 
     //Playlist-Creation-Function
     const setPlaylist = (playlistName) => {
         var playlistData = { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + accessToken }, 
-        body: JSON.stringify({ name: playlistName, public: false }) }
+        body: JSON.stringify({ name: playlistName, public: publicPlaylist }) }
 
         if (accessToken) {
             fetch('https://api.spotify.com/v1/users/' + userId + '/playlists', playlistData)
                 .then(response => response.json())
+                
                 .then(data => setPlaylistId(data.id))
+                .catch(error => console.error("Error:", error))
         }
     }
 

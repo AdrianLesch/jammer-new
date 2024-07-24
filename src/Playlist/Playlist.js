@@ -6,6 +6,7 @@ export default function Playlist({ playlist, onRemoveTrack }) {
     const [playlistName, setPlaylistName] = useState("");
     const [createPlaylist, setCreatePlaylist] = useState("");
     const [uri, setUri] = useState([]);
+    const [publicPlaylist, setPublicPlaylist] = useState(false);
 
 
     function handleChange(e) {
@@ -19,8 +20,14 @@ export default function Playlist({ playlist, onRemoveTrack }) {
         alert("Playlist saved to Spotify");
     }
 
+    function handlePublic(e) { 
+        setPublicPlaylist(e.target.checked  ? true : false);
+    }
+
+    console.log(publicPlaylist);
+
     useEffect(() => { 
-        setUri(playlist.map((track) => track[4]));
+        setUri(playlist.map((track) => track[5]));
     }, [playlist]);
 
 
@@ -29,7 +36,7 @@ export default function Playlist({ playlist, onRemoveTrack }) {
     return (
         <>
             <div style={{ border: "2px solid black", width: "fit-content", padding: "5px" }}>
-                Playlist
+                <h2>Playlist</h2>
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder='Enter Playlistname' onChange={handleChange} />
                     <br />
@@ -38,8 +45,10 @@ export default function Playlist({ playlist, onRemoveTrack }) {
                     ))}
                     <br />
                     <button type='submit'>Save to Spotify</button>
+                    Public
+                    <input onChange={handlePublic} type="checkbox" />
                 </form>
-            <SpotifyAPI createPlaylist={createPlaylist} uri={uri}/>
+            <SpotifyAPI createPlaylist={createPlaylist} uri={uri} publicPlaylist={publicPlaylist}/>
             </div>
         </>
     )
