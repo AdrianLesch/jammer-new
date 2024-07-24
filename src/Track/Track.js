@@ -3,7 +3,6 @@ import styles from "./Track.module.css"
 
 export default function Track({ track, getTrack }) {
 
-
   return (
     <>
       <div className={styles.container}>
@@ -14,9 +13,7 @@ export default function Track({ track, getTrack }) {
         <br />
         Album: {track[3]}
         <br />
-        ID: {track[0]}
-        <br />
-        URI: {track[4]}
+        <img className={styles.img} src={track[4].url} alt="album cover" />
         <button type="button" onClick={() => getTrack(track)}>+</button>
       </div>
 

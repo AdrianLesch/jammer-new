@@ -10,10 +10,7 @@ export default function SearchResults({ tracks, getTrack }) {
     }
 
     const { id, name, artists, album, uri } = tracks;
-    const tracklist = [id, name, artists[0].name, album.name, uri];
-
-    //console.log(tracklist);
-
+    const tracklist = [id, name, artists[0].name, album.name, album.images[0], uri];
 
     return (
         <>
