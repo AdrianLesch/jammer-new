@@ -5,8 +5,8 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri 
     const [userId, setUserId] = useState("");
     const [playlistId, setPlaylistId] = useState("");
 
-    const CLIENT_ID = "3018fe9acf7d4fcfb25b96e1d2b84853";
-    const CLIENT_SECRECT = "241ba7d436564a97b94efb0b5de1ba80";
+    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+    const CLIENT_SECRECT = process.env.REACT_APP_CLIENT_SECRET;
 
     //Authentication-fetching
     useEffect(() => {
