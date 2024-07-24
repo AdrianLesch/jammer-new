@@ -1,0 +1,11 @@
+.container{
+    border: 2px solid black;
+    width: 28rem;
+    max-height: fit-content;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-flow:column wrap;
+    align-items: center;
+}

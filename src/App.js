@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
 import Playlist from './Playlist/Playlist';
-import SpotifyAPI from './Spotify/SpotifyAPI';
+import styles from './App.module.css';
+
 
 
 function App() {
@@ -28,13 +29,24 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
   };
 
-  
+
 
   return (
     <>
+    <div className={styles.container}>
+      <h1>Mighty Magic Track Explorer</h1>
+      <p>Greetings Explorer, a little disclaimer upfront:
+      This is a portfolio project for the Codecademy Fullstack Engineer Career Path.
+      The scope was to create a React App in connection with the Spotify API.
+      This app is limited to a track search, but you can also enter albums or artists and you will
+      always get the most popular track.<br/> I encourage you also to just type in random words, you never know what music you will discover.
+      Aside from that you can create your own playlists and save them to your Spotify account. Check it out and have fun.</p>
       <SearchBar getSearch={getSearch} />
-      <SearchResults tracks={input} getTrack={getTrack} />
-      <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} /> 
+      <div className={styles.flexColumns}>
+        <SearchResults tracks={input} getTrack={getTrack} />
+        <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} />
+      </div>
+      </div>
     </>
   )
 }
