@@ -34,13 +34,15 @@ function App() {
   return (
     <>
     <div className={styles.container}>
-      <h1>Mighty Magic Track Explorer</h1>
+      <h1>Mighty Magic Track Explorer <span className={styles.tapeone}>&#9991;</span><span>&#9991;</span></h1>
+      <div className={styles.textbox}>
       <p>Greetings Explorer, a little disclaimer upfront:
       This is a portfolio project for the Codecademy Fullstack Engineer Career Path.
       The scope was to create a React App in connection with the Spotify API.
       This app is limited to a track search, but you can also enter albums or artists and you will
       always get the most popular track.<br/> I encourage you also to just type in random words, you never know what music you will discover.
       Aside from that you can create your own playlists and save them to your Spotify account. Check it out and have fun.</p>
+      </div>
       <SearchBar getSearch={getSearch} />
       <div className={styles.flexColumns}>
         <SearchResults tracks={input} getTrack={getTrack} />
