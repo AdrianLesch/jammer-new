@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC&display=swap');
 
+body{
+    background-image: url(C:\Codingprojekte\VSCode-Projects\JammmerNew\70s Retro Stripes Color Palette - color-hex.com.png);
+}
+
+h1{
+    border: 2px solid black;
+    background-color: whitesmoke;
+    max-width: 33rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 .container {
     font-family: "Bona Nova SC", serif;
     font-weight: 400;
@@ -8,10 +22,15 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    ;
 }
 
 .textbox {
-    max-width:31rem;
+    max-width:33rem;
+    border: 2px solid black;
+    padding: .5rem;
+    margin: .5rem;
+    background-color: white;
 }
 
 .flexColumns {
@@ -20,15 +39,28 @@
     align-items: center;
 }
 
+
+.tapecontainer{
+    border: 2px solid black;
+    padding: .1rem;
+    background-color: white;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(-360deg);
     }
 }
 
 .tapeone{
+    display: inline-block;
     animation: rotate 2s linear infinite;
+}
+
+.tapetwo {
+    display: inline-block;
+    animation: rotate 1s linear infinite;
 }

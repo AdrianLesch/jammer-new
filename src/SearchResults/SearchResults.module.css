@@ -1,6 +1,7 @@
 .container{
     border: 2px solid black;
-    width: 28rem;
+    background-color: white;
+    width: 33rem;
     max-height: fit-content;
     padding: 5px;
     margin: 10px;

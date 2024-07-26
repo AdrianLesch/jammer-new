@@ -29,12 +29,16 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
   };
 
+  //Animation
+
+
 
 
   return (
     <>
     <div className={styles.container}>
-      <h1>Mighty Magic Track Explorer <span className={styles.tapeone}>&#9991;</span><span>&#9991;</span></h1>
+      <h1>Mighty Magic Track Explorer <span className={styles.tapecontainer}><span className={styles.tapeone}>&#9991;</span><span className={styles.tapetwo}>&#9991;</span></span></h1>
+      <button>Disclaimer</button>
       <div className={styles.textbox}>
       <p>Greetings Explorer, a little disclaimer upfront:
       This is a portfolio project for the Codecademy Fullstack Engineer Career Path.
