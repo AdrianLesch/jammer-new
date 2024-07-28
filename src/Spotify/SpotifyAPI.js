@@ -36,7 +36,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
     //GetSearch-Data 
     useEffect(() => {
         var artistParameters = { method: 'GET', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + accessToken } }
-        var artistID = fetch('https://api.spotify.com/v1/search?q=' + sendSearch + '&type=track', artistParameters)
+        fetch('https://api.spotify.com/v1/search?q=' + sendSearch + '&type=track', artistParameters)
             .then(response => response.json())
             .then(data => getSearch(data.tracks.items[0]))
             .catch(error => console.log('Either nothing was searched yet or the search was invalid'))
@@ -46,7 +46,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
     useEffect(() => {
         var userData = { method: 'GET', headers: { 'Authorization': 'Bearer ' + accessToken } }
         if (accessToken) {
-            var currentUser = fetch('https://api.spotify.com/v1/me', userData)
+            fetch('https://api.spotify.com/v1/me', userData)
                 .then(response => response.json())
                 .then(data => setUserId(data.id))
         }
