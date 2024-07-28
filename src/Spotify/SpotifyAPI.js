@@ -10,7 +10,6 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
     //console.log(uri);
 
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-    //const CLIENT_SECRECT = process.env.REACT_APP_CLIENT_SECRET;
 
     //Authentication-fetching
     useEffect(() => {
@@ -26,7 +25,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
             authUrl += '?response_type=token';
             authUrl += '&show_dialog=true';
             authUrl += '&client_id=' + encodeURIComponent(CLIENT_ID);
-            authUrl += '&redirect_uri=' + encodeURIComponent('http://localhost:3000/');
+            authUrl += '&redirect_uri=' + encodeURIComponent('https://66a6ba12b3b714956c2a5de9--bespoke-llama-ecdec1.netlify.app/');
             authUrl += '&scope=' + encodeURIComponent(scope);
         
             window.location = authUrl;
