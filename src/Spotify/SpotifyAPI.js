@@ -25,7 +25,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
             authUrl += '?response_type=token';
             authUrl += '&show_dialog=true';
             authUrl += '&client_id=' + encodeURIComponent(CLIENT_ID);
-            authUrl += '&redirect_uri=' + encodeURIComponent('https://66a6ba12b3b714956c2a5de9--bespoke-llama-ecdec1.netlify.app/');
+            authUrl += '&redirect_uri=' + encodeURIComponent('https://66a6bc2614950a0008f6bad5--mightymagictrackexplorer.netlify.app/');
             authUrl += '&scope=' + encodeURIComponent(scope);
         
             window.location = authUrl;
