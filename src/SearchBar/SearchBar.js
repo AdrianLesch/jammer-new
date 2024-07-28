@@ -20,8 +20,8 @@ export default function SearchBar({ getSearch }) {
     return (
         <>
             <form onSubmit={handleSubmit} name="Search" className={styles.container}>
-                <input type="search" placeholder='Enter search here...' onChange={handleChange} />
-                <button type="submit">Search</button>
+                <input type="search" placeholder='Enter search here...' onChange={handleChange} className={styles.input}/>
+                <button type="submit" className={styles.button}>Search</button>
                 <SpotifyAPI sendSearch={sendSearch} getSearch={getSearch} />
             </form>
         </>

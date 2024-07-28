@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC&display=swap');
 
 body{
-    background-image: url(C:\Codingprojekte\VSCode-Projects\JammmerNew\70s Retro Stripes Color Palette - color-hex.com.png);
+    background-image: linear-gradient(to left, rgba(238, 130, 238, 0.696), rgba(76, 0, 130, 0.603), rgba(0, 0, 255, 0.66), rgba(0, 128, 0, 0.534), rgba(255, 255, 0, 0.71), rgba(255, 166, 0, 0.724), rgba(255, 0, 0, 0.678));
 }
 
 h1{
-    border: 2px solid black;
-    background-color: whitesmoke;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.81);
     max-width: 33rem;
     padding: 1rem;
     display: flex;
@@ -26,11 +26,12 @@ h1{
 }
 
 .textbox {
+    display: none;
     max-width:33rem;
-    border: 2px solid black;
+    border-radius: 15px;
     padding: .5rem;
     margin: .5rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.81);
 }
 
 .flexColumns {
@@ -42,8 +43,9 @@ h1{
 
 .tapecontainer{
     border: 2px solid black;
+    border-radius: 5px;
     padding: .1rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.838);
 }
 
 @keyframes rotate {
@@ -63,4 +65,22 @@ h1{
 .tapetwo {
     display: inline-block;
     animation: rotate 1s linear infinite;
+}
+
+.button{
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #fff;
+    background: #000a47;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.button:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
 }

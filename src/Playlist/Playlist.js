@@ -38,15 +38,15 @@ export default function Playlist({ playlist, onRemoveTrack }) {
             <div className={styles.container}>
                 <h2>Playlist</h2>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder='Enter Playlistname' onChange={handleChange} />
+                    <input type="text" placeholder='Enter Playlistname' onChange={handleChange} className={styles.input}/>
                     <br />
                     Public
-                    <input onChange={handlePublic} type="checkbox" />
+                    <input onChange={handlePublic} type="checkbox"/>
                     {playlist.map((track, index) => (
                         <Tracklist key={index} track={track} index={index} onRemoveTrack={onRemoveTrack} />
                     ))}
                     <br />
-                    <button type='submit'>Save to Spotify</button>
+                    <button type='submit' className={styles.button}>Save to Spotify</button>
                 </form>
             <SpotifyAPI createPlaylist={createPlaylist} uri={uri} publicPlaylist={publicPlaylist}/>
             </div>

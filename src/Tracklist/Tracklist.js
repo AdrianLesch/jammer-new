@@ -6,7 +6,6 @@ export default function Tracklist({ track, index, onRemoveTrack }) {
   return (
     <>
       <div className={styles.container}>
-        <br />
         Song: {track[1]}
         <br />
         Artist: {track[2]}

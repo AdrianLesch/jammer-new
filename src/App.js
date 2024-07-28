@@ -13,6 +13,7 @@ function App() {
   const [savedPlaylist, setSavedPlaylist] = useState([]);
   const [accessToken, setAccessToken] = useState("");
 
+
   //console.log(input);
 
   //GetSearch-Data
@@ -30,16 +31,22 @@ function App() {
   };
 
   //Animation
-
-
+const handleAnimation = (e) => {
+  const textBox = document.getElementById("textbox");
+  if(textBox.style.display === "block") {
+    textBox.style.display = "none";
+  } else {
+    textBox.style.display = "block";
+  }
+}
 
 
   return (
     <>
     <div className={styles.container}>
       <h1>Mighty Magic Track Explorer <span className={styles.tapecontainer}><span className={styles.tapeone}>&#9991;</span><span className={styles.tapetwo}>&#9991;</span></span></h1>
-      <button>Disclaimer</button>
-      <div className={styles.textbox}>
+      <button onClick={handleAnimation} className={styles.button}>Disclaimer</button>
+      <div className={styles.textbox} id="textbox">
       <p>Greetings Explorer, a little disclaimer upfront:
       This is a portfolio project for the Codecademy Fullstack Engineer Career Path.
       The scope was to create a React App in connection with the Spotify API.
