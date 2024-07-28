@@ -1,3 +1,5 @@
+//This component is responsible for the tracklist. It displays the tracklist in a list.
+
 import React from "react";
 import styles from "./Tracklist.module.css"
 

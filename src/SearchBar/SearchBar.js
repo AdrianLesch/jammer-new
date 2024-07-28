@@ -1,3 +1,5 @@
+//This component is responsible for the search bar and the search button. It also sends the search query to the SpotifyAPI component.
+
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import SpotifyAPI from "../Spotify/SpotifyAPI";

@@ -1,7 +1,7 @@
 .container{
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.81);
-    width: 33rem;
+    max-width: 33rem;
     max-height: fit-content;
     padding: 5px;
     margin: 10px;

@@ -1,3 +1,5 @@
+//This is the App.js file. This is the main component that renders the other components. It also contains the state and the functions that are passed down to the other components.
+
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
@@ -7,7 +9,7 @@ import styles from './App.module.css';
 
 
 function App() {
-
+  //Use-States
   const [input, setInput] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [savedPlaylist, setSavedPlaylist] = useState([]);
@@ -30,7 +32,7 @@ function App() {
     setPlaylist((prevPlaylist) => prevPlaylist.filter((_, indexToRemove) => indexToRemove !== index));
   };
 
-  //Animation
+  //Textbox-Visibility
 const handleAnimation = (e) => {
   const textBox = document.getElementById("textbox");
   if(textBox.style.display === "block") {
@@ -40,7 +42,7 @@ const handleAnimation = (e) => {
   }
 }
 
-
+  //Main-Render
   return (
     <>
     <div className={styles.container}>
@@ -59,6 +61,7 @@ const handleAnimation = (e) => {
         <SearchResults tracks={input} getTrack={getTrack} />
         <Playlist playlist={playlist} onRemoveTrack={removeTrackFromPlaylist} />
       </div>
+      <span className={styles.tune}>U N E !</span>
       </div>
     </>
   )
@@ -84,4 +87,5 @@ export default App;
         </div>
       </>
     )
-  }*/
+  }
+  */

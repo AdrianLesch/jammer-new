@@ -1,3 +1,5 @@
+//This component is responsible for the Spotify API. It fetches data from the Spotify API and sends data to the Spotify API.
+
 import { useEffect, useState } from 'react';
 
 export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri, publicPlaylist }) {

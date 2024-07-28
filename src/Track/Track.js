@@ -1,3 +1,5 @@
+//This component is responsible for the track. It displays the track in a list.
+
 import React from "react";
 import styles from "./Track.module.css"
 

@@ -1,3 +1,5 @@
+//This component is responsible for the playlist. It displays the playlist in a list.
+
 import React, { useState, useEffect } from "react";
 import SpotifyAPI from "../Spotify/SpotifyAPI";
 import Tracklist from "../Tracklist/Tracklist";

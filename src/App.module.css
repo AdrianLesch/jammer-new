@@ -84,3 +84,9 @@ h1{
     transition: all .1s ease;
     box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
 }
+
+.tune{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-size: 5rem;
+}
