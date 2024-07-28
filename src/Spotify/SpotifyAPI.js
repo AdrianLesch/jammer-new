@@ -10,7 +10,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
     //console.log(uri);
 
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-    const CLIENT_SECRECT = process.env.REACT_APP_CLIENT_SECRET;
+    //const CLIENT_SECRECT = process.env.REACT_APP_CLIENT_SECRET;
 
     //Authentication-fetching
     useEffect(() => {

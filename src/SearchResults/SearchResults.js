@@ -1,6 +1,6 @@
 //This component is responsible for the search results. It displays the search results in a list.
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Track from "../Track/Track";
 import styles from "./SearchResults.module.css";
 

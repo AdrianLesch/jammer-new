@@ -1,6 +1,6 @@
 //This is the App.js file. This is the main component that renders the other components. It also contains the state and the functions that are passed down to the other components.
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import SearchResults from './SearchResults/SearchResults';
 import Playlist from './Playlist/Playlist';
@@ -12,8 +12,8 @@ function App() {
   //Use-States
   const [input, setInput] = useState([]);
   const [playlist, setPlaylist] = useState([]);
-  const [savedPlaylist, setSavedPlaylist] = useState([]);
-  const [accessToken, setAccessToken] = useState("");
+  //const [savedPlaylist, setSavedPlaylist] = useState([]);
+  //const [accessToken, setAccessToken] = useState("");
 
 
   //console.log(input);
