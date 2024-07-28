@@ -34,7 +34,7 @@ Jammer New (Mighty Magic Track Explorer) is a React application that allows user
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Codecademy Project Description
+# Codecademy Project Description
 
 # Jammer-Portfolio-Project
 ## A Spotify Playlist creator built with React and the Spotify API
