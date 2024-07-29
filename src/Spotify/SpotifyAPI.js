@@ -48,6 +48,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
             fetch('https://api.spotify.com/v1/me', userData)
                 .then(response => response.json())
                 .then(data => setUserId(data.id))
+                .catch(error => console.error("Error:", error))
         }
     }, [accessToken]);
 
