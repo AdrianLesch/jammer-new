@@ -2,6 +2,12 @@
 
 Jammer New (Mighty Magic Track Explorer) is a React application that allows users to search for tracks using the Spotify API, create custom playlists, and save them to their Spotify account. This project is part of the Codecademy Fullstack Engineer Career Path.
 
+### Disclaimmer: What I didn’t know before was, that in order to make the app work for other people in general you need to shift a Spotify App from “Development” into “Quota Extension” which is a whole audit process, so f.e. if the app is according to the whole Spotify Design Guidelines etc. 
+More information here: https://developer.spotify.com/documentation/web-api/concepts/quota-modes 
+This would mean quite a lot of extra work for me just to meet the Spotify compliance which is tbh a little bit out of scope for this project. If you want to test my app, write me DM and I can add you to the Development User List, which grants you a permisson to test all functions.
+
+GitHub-Repo: 
+
 ## Features
 
 - **Track Search**: Search for tracks, albums, or artists using the Spotify API.
