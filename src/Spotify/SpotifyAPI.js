@@ -30,7 +30,7 @@ export default function SpotifyAPI({ sendSearch, getSearch, createPlaylist, uri,
         
             window.location = authUrl;
         }
-    }, []);
+    }, [CLIENT_ID]);
 
     //GetSearch-Data 
     useEffect(() => {
